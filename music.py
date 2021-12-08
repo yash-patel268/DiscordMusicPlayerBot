@@ -38,5 +38,10 @@ class music(commands.Cog):
     await ctx.voice_client.pause()
     await ctx.send("The video has been paused")
 
+  @commands.command()
+  async def resume(self, ctx):
+    await ctx.voice_client.resume()
+    await ctx.send("The video has been resumed")
+
 def setup(client):
   client.add_cog(music(client))
