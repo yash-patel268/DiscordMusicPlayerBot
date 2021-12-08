@@ -33,5 +33,10 @@ class music(commands.Cog):
       source = await discord.FFmpegOpusAudio.from_probe(url2, **FFMPEG_OPTIONS)
       vc.play(source)
 
+  @commands.command()
+  async def pause(self, ctx):
+    await ctx.voice_client.pause()
+    await ctx.send("The video has been paused")
+
 def setup(client):
   client.add_cog(music(client))
